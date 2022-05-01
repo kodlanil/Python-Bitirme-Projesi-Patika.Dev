@@ -1,0 +1,1 @@
+# Python-Bitirme-Projesi-Patika.Dev
