@@ -1,16 +1,11 @@
-Python 3.10.1 (tags/v3.10.1:2cd268a, Dec  6 2021, 19:10:37) [MSC v.1929 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
+result=[]
 def flatten(lst):
-  while True:
-    r=0
-    new_lst=[]
-    for element in lst:
-      if type(element) in (list,set, tuple, dict):
-        r+=1
-        new_lst.extend(element)
-      else:
-        new_lst.append(element)
-    lst=new_lst
-    if r==0:
-      break
-  return lst
+  for element in lst:
+    if type(element) in (list,set, tuple):
+      flatten(element)
+    elif type(element)==dict:
+      for x in d.items():
+        flatten(x)
+    else:
+      result.append(element)
+  return result
